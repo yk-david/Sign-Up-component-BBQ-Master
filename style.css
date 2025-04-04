@@ -1,5 +1,5 @@
-*, 
-*::before, 
+*,
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -23,7 +23,7 @@ h1 {
   margin: 0;
 }
 
-h1 + p {
+h1+p {
   color: #f18119;
   font-weight: 900;
   font-size: 1.3125rem;
@@ -36,7 +36,7 @@ h2 {
   margin: 0;
 }
 
-h2 + p {
+h2+p {
   font-weight: 900;
   color: #f18119;
   margin-top: 0;
@@ -88,8 +88,97 @@ Main content section
   padding: 2em 1em;
 }
 
-.intro > *, 
-.main-content > * {
+.intro>*,
+.main-content>* {
   max-width: 400px;
   margin-inline: auto;
+}
+
+
+/*========
+form
+=========*/
+.email-collector {
+  width: 80%;
+  max-width: 300px;
+}
+
+input,
+.btn {
+  width: 100%;
+  border-radius: 5px;
+}
+
+input {
+  font-family: inherit;
+  text-align: center;
+  margin-bottom: 0.75em;
+  padding: 0.25em;
+  border: 1px soild #404040;
+  transform: scale(1);
+  transition: transform 0.25s;
+}
+
+input:focus {
+  transform: scale(1.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to left, #ff713b, #ffa51d);
+  color: #fff;
+  transform: scale(1);
+  transition: transform 0.25s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.1);
+}
+
+.btn-primary:active {
+  transform: scale(1);
+}
+
+
+/*============
+Media queries
+=============*/
+@media (min-width: 500px) {
+  body {
+    font-size: 1.125rem;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  h1 + p {
+    font-size: 1.75rem;
+  }
+
+  .intro, 
+  .main-content {
+    width: 50%;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
